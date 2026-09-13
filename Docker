@@ -1,1 +1,14 @@
+# 使用官方维护的预编译镜像（推荐稳定版 1）
+FROM louislam/uptime-kuma:1
 
+# 设置时区（可选，建议设置为亚洲/上海）
+ENV TZ=Asia/Shanghai
+
+# 声明数据持久化目录
+VOLUME /app/data
+
+# 暴露默认端口
+EXPOSE 3001
+
+# 启动服务
+CMD ["node", "server/server.js"]
